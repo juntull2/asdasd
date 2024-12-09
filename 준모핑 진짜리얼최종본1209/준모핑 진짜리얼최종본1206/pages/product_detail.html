@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상품 상세 - Tiny Pink Toy Shop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/product-detail.css">
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="header-upper">
+                    <div class="logo">
+                        <h1><a href="../index.html">티니핑 토이샵</a></h1>
+                    </div>
+                    <div class="search-container">
+                        <div class="search-bar">
+                            <input type="text" placeholder="검색어를 입력하세요">
+                            <button type="submit"><i class="fas fa-search"></i> 검색</button>
+                        </div>
+                        <div class="search-dropdown">
+                            <div class="popular-searches">
+                                <h3>🔥 실시간 인기 검색어</h3>
+                                <ul>
+                                    <li><a href="#"><span class="rank">1</span>레고 프렌즈</a></li>
+                                    <li><a href="#"><span class="rank">2</span>바비 인형</a></li>
+                                    <li><a href="#"><span class="rank">3</span>뽀로로</a></li>
+                                    <li><a href="#"><span class="rank">4</span>타요 버스</a></li>
+                                    <li><a href="#"><span class="rank">5</span>디즈니 피규어</a></li>
+                                    <li><a href="#"><span class="rank">6</span>시크릿 쥬쥬</a></li>
+                                    <li><a href="#"><span class="rank">7</span>콩순이</a></li>
+                                    <li><a href="#"><span class="rank">8</span>헬로카봇</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-menu">
+                        <a href="login.html">로그인</a>
+                        <a href="register.html">회원가입</a>
+                        <a href="cart.html" class="cart-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                        <div class="mypage-dropdown">
+                            <a href="mypage.html" class="mypage-btn">마이페이지 <i class="fas fa-user"></i></a>
+                            <div class="dropdown-content">
+                                <a href="mypage.html#orders">주문내역</a>
+                                <a href="mypage.html#wishlist">찜 목록</a>
+                                <a href="inquiry.html">1:1 문의</a>
+                                <a href="mypage.html#profile">회원정보</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-lower">
+                    <nav class="main-nav">
+                        <ul>
+                            <li>
+                                <a href="new.html">NEW</a>
+                            </li>
+                            <li><a href="best.html">BEST</a></li>
+                            <li><a href="catch_tinyfing.html">캐치 티니핑</a></li>
+                            <li><a href="tinyfing_world.html">티니핑 월드</a></li>
+                            <li><a href="tinyfing_clothes.html">티니핑 의류</a></li>
+                            <li><a href="tinyfing_goods.html">티니핑 굿즈</a></li>
+                            <li>
+                                <a href="event.html">EVENT</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="product-detail-main">
+        <div class="container">
+            <!-- 상품 상세 영역 -->
+            <div class="product-detail-content">
+                <!-- 상품 이미지 영역 -->
+                <div class="product-images">
+                    <div class="main-image-container">
+                        <div class="main-image">
+                            <img src="../img/티니핑1.jpg" alt="상품 메인 이미지" id="mainImage">
+                            <div class="magnifier-lens"></div>
+                        </div>
+                        <div class="magnified-view">
+                            <img src="../img/티니핑1.jpg" alt="확대된 이미지" id="magnifiedImage">
+                        </div>
+                    </div>
+                    <div class="thumbnail-list">
+                        <img src="../img/티니핑2.jpg" alt="썸네일 1" class="thumbnail active" onclick="changeImage(this)">
+                        <img src="../img/티니핑3.jpg" alt="썸네일 2" class="thumbnail" onclick="changeImage(this)">
+                        <img src="../img/티니핑4.jpg" alt="썸네일 3" class="thumbnail" onclick="changeImage(this)">
+                        <img src="../img/티니핑5.jpg" alt="썸네일 4" class="thumbnail" onclick="changeImage(this)">
+                    </div>
+                </div>
+
+                <!-- 상품 정보 영역 -->
+                <div class="product-info">
+                    <div class="info-grid">
+                        <div class="left-column">
+                            <div class="product-header">
+                                <h1 class="product-title">핑크 토끼 인형</h1>
+                            </div>
+
+                            <div class="price-delivery-row">
+                                <div class="price-section">
+                                    <div class="price-row">
+                                        <span class="original-price">39,900</span>
+                                        <span class="discount-badge">20% OFF</span>
+                                        <span class="final-price">31,920원</span>
+                                    </div>
+                                </div>
+
+                                <div class="delivery-info-group">
+                                    <div class="delivery-info">
+                                        <i class="fas fa-truck"></i>
+                                        <span>무료배송</span>
+                                    </div>
+                                    <div class="delivery-time">
+                                        <i class="fas fa-clock"></i>
+                                        <span>내일(수) 도착 예정</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="options-row">
+                                <div class="option-section">
+                                    <label for="product-option">옵션선택</label>
+                                    <select id="product-option" class="option-select">
+                                        <option value="">선택하세요</option>
+                                        <option value="1">핑크 / 소형</option>
+                                        <option value="2">핑크 / 중형</option>
+                                        <option value="3">핑크 / 대형</option>
+                                    </select>
+                                </div>
+                            
+                                <div class="quantity-section">
+                                    <label for="quantity">수량</label>
+                                    <div class="quantity-control">
+                                        <button class="quantity-btn minus"><i class="fas fa-minus"></i></button>
+                                        <input type="number" id="quantity" value="1" min="1" max="99">
+                                        <button class="quantity-btn plus"><i class="fas fa-plus"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="total-section">
+                        <div class="total-price">
+                            <span class="total-label">총 상품금액</span>
+                            <span class="total">31,920원</span>
+                        </div>
+
+                        <div class="action-buttons">
+                            <button class="btn btn-cart">장바구니</button>
+                            <button class="btn btn-buy">바로구매</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 상품 상세 탭 -->
+            <div class="product-tabs">
+                <div class="tab-buttons">
+                    <button type="button" class="tab-button active" data-tab="detail">상품상세</button>
+                    <button type="button" class="tab-button" data-tab="review">상품리뷰 <span class="count">(32)</span></button>
+                    <button type="button" class="tab-button" data-tab="qna">상품문의 <span class="count">(12)</span></button>
+                    <button type="button" class="tab-button" data-tab="delivery">배송/교환/반품</button>
+                </div>
+
+                <div class="tab-contents">
+                    <!-- 상품 상세 탭 내용 -->
+                    <div id="detail" class="tab-content active">
+                        <div class="product-description">
+                            <h3>상품 상세정보</h3>
+                            <div class="detail-info">
+                                <img src="../img/product-detail1.jpg" alt="상품 상세 이미지">
+                                <p>부드러운 촉감의 프리미엄 토끼 인형입니다. 아이들의 정서 발달에 도움을 주는 최고의 선물이 될 것입니다.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 리뷰 탭 내용 -->
+                    <div id="review" class="tab-content">
+                        <div class="review-header">
+                            <div class="review-summary">
+                                <div class="rating-average">
+                                    <span class="rating">4.8</span>
+                                    <div class="stars">★★★★★</div>
+                                </div>
+                                <button type="button" class="write-review-btn">리뷰 작성하기</button>
+                            </div>
+                            <div class="review-filters">
+                                <button type="button" class="filter-btn active">전체 (32)</button>
+                                <button type="button" class="filter-btn">포토 리뷰 (12)</button>
+                                <select class="review-sort">
+                                    <option value="recent">최신순</option>
+                                    <option value="rating">평점순</option>
+                                </select>
+                            </div>
+                        </div>
+                        <ul class="review-list">
+                            <li class="review-item">
+                                <div class="review-info">
+                                    <div class="stars">★★★★★</div>
+                                    <span class="author">홍*</span>
+                                    <span class="date">2024.03.15</span>
+                                </div>
+                                <div class="review-content">
+                                    <div class="review-images">
+                                        <img src="../img/review1.jpg" alt="리뷰 이미지">
+                                    </div>
+                                    <p>아이가 너무 좋아해요! 품질도 좋고 배송도 빨라서 만족합니다.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 문의 탭 내용 -->
+                    <div id="qna" class="tab-content">
+                        <div class="qna-header">
+                            <button type="button" class="write-qna-btn">문의하기</button>
+                            <select class="qna-sort">
+                                <option value="recent">최신순</option>
+                                <option value="answered">답변완료순</option>
+                            </select>
+                        </div>
+                        <ul class="qna-list">
+                            <li class="qna-item">
+                                <div class="qna-title">
+                                    <span class="status answered">답변완료</span>
+                                    <span class="type">[상품]</span>
+                                    <span class="question">사이즈 문의드립니다.</span>
+                                </div>
+                                <div class="qna-content">
+                                    <div class="question-content">
+                                        <p>대형 사이즈의 정확한 크기가 궁금합니다.</p>
+                                    </div>
+                                    <div class="answer-content">
+                                        <span class="admin">판매자</span>
+                                        <p>안녕하세요. 대형 사이즈는 높이 60cm입니다.</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 배송/교환/반품 탭 내용 -->
+                    <div id="delivery" class="tab-content">
+                        <div class="delivery-info">
+                            <h3>배송 안내</h3>
+                            <table class="info-table">
+                                <tr>
+                                    <th>배송방법</th>
+                                    <td>택배</td>
+                                </tr>
+                                <tr>
+                                    <th>배송비</th>
+                                    <td>무료배송</td>
+                                </tr>
+                                <tr>
+                                    <th>배송기간</th>
+                                    <td>결제완료 후 1-3일 이내 출고</td>
+                                </tr>
+                            </table>
+                            
+                            <h3>교환/반품 안내</h3>
+                            <table class="info-table">
+                                <tr>
+                                    <th>교환/반품 기간</th>
+                                    <td>상품 수령 후 7일 이내</td>
+                                </tr>
+                                <tr>
+                                    <th>교환/반품 비용</th>
+                                    <td>무료 (상품 불량인 경우)</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <!-- 푸터 내용은 index.html과 동일 -->
+    </footer>
+
+    <script src="../js/product-detail.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

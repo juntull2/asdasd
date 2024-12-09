@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문의 상세 - 티니핑 토이샵</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .inquiry-view-section {
+            padding: 2rem 0;
+            min-height: calc(100vh - 300px);
+            margin-top: 80px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+
+        .section-title .highlight {
+            color: #ff6b6b;
+        }
+
+        .inquiry-card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .inquiry-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .inquiry-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 0;
+            color: #333;
+        }
+
+        .inquiry-meta {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+
+        .inquiry-content {
+            padding: 1.5rem;
+            line-height: 1.6;
+            color: #495057;
+        }
+
+        .inquiry-attachments {
+            padding: 1rem 1.5rem;
+            background: #f8f9fa;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .attachment-link {
+            color: #ff6b6b;
+            text-decoration: none;
+        }
+
+        .attachment-link:hover {
+            color: #ff5252;
+            text-decoration: underline;
+        }
+
+        .answer-card {
+            background: #f8f9fa;
+        }
+
+        .btn-inquiry {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-inquiry:hover {
+            background: #ff5252;
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        .btn-delete {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-delete:hover {
+            background: #c82333;
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        .btn-list {
+            background: #adb5bd;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-list:hover {
+            background: #6c757d;
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        .badge-category {
+            background: #ff6b6b;
+            color: white;
+            font-weight: 500;
+            padding: 0.5em 1em;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="header-upper">
+                    <div class="logo">
+                        <h1><a href="../index.html">티니핑 토이샵</a></h1>
+                    </div>
+                    <div class="search-container">
+                        <div class="search-bar">
+                            <input type="text" placeholder="검색어를 입력하세요">
+                            <button type="submit"><i class="fas fa-search"></i> 검색</button>
+                        </div>
+                        <div class="search-dropdown">
+                            <div class="popular-searches">
+                                <h3>🔥 실시간 인기 검색어</h3>
+                                <ul>
+                                    <li><a href="#"><span class="rank">1</span>레고 프렌즈</a></li>
+                                    <li><a href="#"><span class="rank">2</span>바비 인형</a></li>
+                                    <li><a href="#"><span class="rank">3</span>뽀로로</a></li>
+                                    <li><a href="#"><span class="rank">4</span>타요 버스</a></li>
+                                    <li><a href="#"><span class="rank">5</span>디즈니 피규어</a></li>
+                                    <li><a href="#"><span class="rank">6</span>시크릿 쥬쥬</a></li>
+                                    <li><a href="#"><span class="rank">7</span>콩순이</a></li>
+                                    <li><a href="#"><span class="rank">8</span>헬로카봇</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-menu">
+                        <a href="login.html">로그인</a>
+                        <a href="register.html">회원가입</a>
+                        <a href="cart.html" class="cart-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                        <div class="mypage-dropdown">
+                            <a href="mypage.html" class="mypage-btn">마이페이지 <i class="fas fa-user"></i></a>
+                            <div class="dropdown-content">
+                                <a href="mypage.html#orders">주문내역</a>
+                                <a href="mypage.html#wishlist">찜 목록</a>
+                                <a href="inquiry.html">1:1 문의</a>
+                                <a href="mypage.html#profile">회원정보</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-lower">
+                    <nav class="main-nav">
+                        <ul>
+                            <li>
+                                <a href="new.html">NEW</a>
+                            </li>
+                            <li><a href="best.html">BEST</a></li>
+                            <li><a href="catch_tinyfing.html">캐치 티니핑</a></li>
+                            <li><a href="tinyfing_world.html">티니핑 월드</a></li>
+                            <li><a href="tinyfing_clothes.html">티니핑 의류</a></li>
+                            <li><a href="tinyfing_goods.html">티니핑 굿즈</a></li>
+                            <li>
+                                <a href="event.html">EVENT</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 메인 컨텐츠 -->
+    <main class="inquiry-view-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="highlight">문의</span> 상세
+            </h2>
+            
+            <!-- 문의 내용 -->
+            <div class="inquiry-card">
+                <div class="inquiry-header">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div>
+                            <span class="badge-category me-2">상품문의</span>
+                            <h5 class="inquiry-title d-inline">배송 관련 문의드립니다</h5>
+                        </div>
+                        <div class="inquiry-meta">
+                            <small>작성일: 2024-01-10</small>
+                            <small class="ms-2">수정일: 2024-01-10</small>
+                        </div>
+                    </div>
+                    <div class="inquiry-meta">
+                        <small>작성자: 홍길동</small>
+                    </div>
+                </div>
+                <div class="inquiry-content">
+                    주문한 상품의 배송이 언제 시작되나요?<br>
+                    지난주 금요일에 주문했는데 아직 배송 시작 알림을 못 받았습니다.<br>
+                    확인 부탁드립니다.
+                </div>
+                <div class="inquiry-attachments">
+                    <div class="mb-2">
+                        <strong>첨부파일</strong>
+                    </div>
+                    <div>
+                        <a href="#" class="attachment-link">
+                            <i class="fas fa-paperclip me-1"></i>주문내역.jpg
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 답변 영역 -->
+            <div class="inquiry-card answer-card">
+                <div class="inquiry-header">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h6 class="mb-0">관리자 답변</h6>
+                        <small class="text-muted">2024-01-10</small>
+                    </div>
+                </div>
+                <div class="inquiry-content">
+                    안녕하세요, 홍길동 고객님.<br>
+                    문의하신 주문건은 현재 출고 준비중이���, 오늘 중으로 발송될 예정입니다.<br>
+                    배송이 시작되면 SMS로 알림 드리도록 하겠습니다.<br>
+                    추가 문의사항이 있으시면 언제든 문의해 주시기 바랍니다.<br>
+                    감사합니다.
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between">
+                <div>
+                    <a href="inquiry.html" class="btn btn-list">
+                        <i class="fas fa-list me-1"></i>목록
+                    </a>
+                </div>
+                <div>
+                    <a href="#" class="btn btn-inquiry me-2">
+                        <i class="fas fa-edit me-1"></i>수정
+                    </a>
+                    <button type="button" class="btn btn-delete">
+                        <i class="fas fa-trash-alt me-1"></i>삭제
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="py-5">
+        <div class="container">
+            <p class="text-center mb-0">&copy; 2024 티니핑 토이샵. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html> 

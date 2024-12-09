@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마이페이지 - 티니핑 토이샵</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/mypage.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="header-upper">
+                    <div class="logo">
+                        <h1><a href="../index.html">티니핑 토이샵</a></h1>
+                    </div>
+                    <div class="search-container">
+                        <div class="search-bar">
+                            <input type="text" placeholder="검색어를 입력하세요">
+                            <button type="submit"><i class="fas fa-search"></i> 검색</button>
+                        </div>
+                        <div class="search-dropdown">
+                            <div class="popular-searches">
+                                <h3>🔥 실시간 인기 검색어</h3>
+                                <ul>
+                                    <li><a href="#"><span class="rank">1</span>레고 프렌즈</a></li>
+                                    <li><a href="#"><span class="rank">2</span>바비 인형</a></li>
+                                    <li><a href="#"><span class="rank">3</span>뽀로로</a></li>
+                                    <li><a href="#"><span class="rank">4</span>타요 버스</a></li>
+                                    <li><a href="#"><span class="rank">5</span>디즈니 피규어</a></li>
+                                    <li><a href="#"><span class="rank">6</span>시크릿 쥬쥬</a></li>
+                                    <li><a href="#"><span class="rank">7</span>콩순이</a></li>
+                                    <li><a href="#"><span class="rank">8</span>헬로카봇</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-menu">
+                        <a href="login.html">로그인</a>
+                        <a href="register.html">회원가입</a>
+                        <a href="cart.html" class="cart-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                        <div class="mypage-dropdown">
+                            <a href="mypage.html" class="mypage-btn">마이페이지 <i class="fas fa-user"></i></a>
+                            <div class="dropdown-content">
+                                <a href="mypage.html#orders">주문내역</a>
+                                <a href="mypage.html#wishlist">찜 목록</a>
+                                <a href="inquiry.html">1:1 문의</a>
+                                <a href="mypage.html#profile">회원정보</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-lower">
+                    <nav class="main-nav">
+                        <ul>
+                            <li>
+                                <a href="new.html">NEW</a>
+                            </li>
+                            <li><a href="best.html">BEST</a></li>
+                            <li><a href="catch_tinyfing.html">캐치 티니핑</a></li>
+                            <li><a href="tinyfing_world.html">티니핑 월드</a></li>
+                            <li><a href="tinyfing_clothes.html">티니핑 의류</a></li>
+                            <li><a href="tinyfing_goods.html">티니핑 굿즈</a></li>
+                            <li>
+                                <a href="event.html">EVENT</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    
+    <main class="mypage-container">
+        <div class="mypage-header">
+            <h2>마이페이지</h2>
+            <div class="user-summary">
+                <div class="user-info">
+                    <span class="user-name">홍길동</span>님 안녕하세요!
+                </div>
+            </div>
+        </div>
+
+        <div class="mypage-content">
+            <aside class="mypage-sidebar">
+                <nav class="mypage-nav">
+                    <ul>
+                        <li class="active"><a href="#orders">주문내역</a></li>
+                        <li><a href="#reviews">리뷰 목록</a></li>
+                        <li><a href="#cart">장바구니</a></li>
+                        <li><a href="#wishlist">찜 목록</a></li>
+                        <li><a href="#inquiries">1:1 문의</a></li>
+                        <li><a href="#profile">회원정보변경</a></li>
+                        <li><a href="#points">포인트/쿠폰</a></li>
+                        <li><a href="#withdraw">회원 탈퇴</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <div class="mypage-main-content">
+                <section id="orders" class="content-section">
+                    <h3>주문내역</h3>
+                    <div class="order-list">
+                        <div class="order-item">
+                            <div class="item-header">
+                                <div class="order-info">
+                                    <span class="date">2024.01.15</span>
+                                    <span class="order-number">주문번호: 2024011501</span>
+                                </div>
+                                <span class="status-label">배송준비중</span>
+                            </div>
+                            <div class="item-content">
+                                <img src="../img/티니핑4.jpg" alt="상품 이미지" class="product-image">
+                                <div class="item-details">
+                                    <h4>티니핑 인형</h4>
+                                    <p class="price">35,000원 / 1개</p>
+                                </div>
+                                <div class="item-actions">
+                                    <button class="btn-review" data-product-id="1" onclick="location.href='product_detail.html'">후기작성</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="reviews" class="content-section hidden">
+                    <h3>리뷰 목록</h3>
+                    <div class="review-list">
+                        <div class="review-item">
+                            <div class="review-header">
+                                <span class="review-date">2024.01.10</span>
+                                <div class="rating">★★★★★</div>
+                            </div>
+                            <div class="review-content">
+                                <img src="../img/티니핑2.jpg" alt="상품 이미지" class="product-image">
+                                <div class="review-details">
+                                    <h4>티니핑 인형</h4>
+                                    <p class="review-text">아이가 너무 좋아해요! 품질도 좋고 배송도 빨랐습니다.</p>
+                                </div>
+                                <div class="review-actions">
+                                    <button class="btn-view-product" data-product-id="1" onclick="location.href='product-detail.html'">상품 리뷰 보기</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="cart" class="content-section hidden">
+                    <h3>장바구니</h3>
+                    <div class="cart-list">
+                        <div class="cart-header">
+                            <label class="cart-checkbox-label">
+                                <input type="checkbox" class="cart-checkbox" id="selectAll">
+                                <span>전체선택</span>
+                            </label>
+                            <button class="btn-delete-selected">선택삭제</button>
+                        </div>
+                        <div class="empty-cart">
+                            <div class="empty-message">
+                                <i class="fas fa-shopping-cart"></i>
+                                <p>장바��니가 비어있습니다.</p>
+                                <p class="sub-text">원하는 상품을 장바구니에 담아보세요!</p>
+                            </div>
+                        </div>
+                        <div class="cart-items">
+                            <div class="cart-item">
+                                <div class="item-content">
+                                    <div class="item-checkbox-wrapper">
+                                        <input type="checkbox" class="cart-checkbox">
+                                    </div>
+                                    <img src="../img/티니핑1.jpg" alt="상품 이미지" class="product-image">
+                                    <div class="item-details">
+                                        <h4>티니핑 인형</h4>
+                                        <p class="price" data-price="35000">35,000원</p>
+                                        <div class="quantity-control">
+                                            <button class="btn-decrease">-</button>
+                                            <input type="number" value="1" min="1" class="quantity-input">
+                                            <button class="btn-increase">+</button>
+                                        </div>
+                                    </div>
+                                    <button class="btn-remove">삭제</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="cart-summary">
+                        <div class="total-price">
+                            <div class="price-row final-price">
+                                <span>총 상품금액</span>
+                                <span class="total-amount">0원</span>
+                            </div>
+                        </div>
+                        <button class="btn-order">주문하기</button>
+                    </div>
+                </section>
+
+                <section id="wishlist" class="content-section hidden">
+                    <h3>찜 목록</h3>
+                    <div class="wishlist-list">
+                        <div class="wishlist-item">
+                            <div class="item-header">
+                                <span class="date">2024.01.15</span>
+                            </div>
+                            <div class="item-content">
+                                <img src="../img/티니핑4.jpg" alt="상품 이미지" class="product-image">
+                                <div class="item-details">
+                                    <h4>티니핑 인형</h4>
+                                    <p class="price">35,000원</p>
+                                </div>
+                                <div class="item-actions">
+                                    <button class="btn-remove-wish">찜 삭제</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="inquiries" class="content-section hidden">
+                    <h3>1:1 문의</h3>
+                    
+                    <!-- BEST FAQ 섹션 -->
+                    <div class="faq-section">
+                        <div class="section-header">
+                            <h4>자주 묻는 질문</h4>
+                            <button class="btn-outline">전체보기</button>
+                        </div>
+                        
+                        <div class="faq-list">
+                            <div class="faq-item">
+                                <div class="faq-question">
+                                    <span class="tag">[배송]</span>
+                                    <span class="text">배송은 얼마나 걸리나요?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>일반 배송은 2-3일, 당일 배송은 당일 오후 6시까지 배송됩니다. 제주/도서산간 지역은 추가로 2-3일이 소요될 수 있습니다.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">
+                                    <span class="tag">[교환/반품]</span>
+                                    <span class="text">제품에 하자가 있을 경우 교환/반품은 어떻게 하나요?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>상품 수령 후 7일 이내에 고객센터로 접수해 주시면 무상으로 교환/반품 처리해 드립니다. 단, 고객 변심의 경우 배송비는 고객 부담입니다.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">
+                                    <span class="tag">[회원]</span>
+                                    <span class="text">아이디/비밀번호를 잊어버렸어요.</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>로그인 페이지에서 '아이디/비밀번호 찾기'를 통해 본인인증 후 확인하실 수 있습니다.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">
+                                    <span class="tag">[포인트]</span>
+                                    <span class="text">적립금은 언제 사용할 수 있나요?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>적립금은 구매 확정 후 즉시 사용 가능하며, 3,000원 이상부터 사용하실 수 있습니다.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 문의 등록 섹션 -->
+                    <div class="inquiry-section">
+                        <div class="inquiry-box">
+                            <div class="inquiry-content">
+                                <i class="fas fa-question-circle"></i>
+                                <h4>원하는 내용을 찾을 수 없나요?</h4>
+                                <p>어떠한 내용이라도 답변될 준비가 되어있습니다.</p>
+                                <button class="btn-inquiry" onclick="location.href='inquiry.html'">
+                                    <i class="fas fa-pen"></i> 문의하기
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="profile" class="content-section hidden">
+                    <h3>개인정보 수정</h3>
+                    <form class="profile-form">
+                        <div class="input-group">
+                            <label>아이디</label>
+                            <input type="text" placeholder="아이디">
+                        </div>
+                        <div class="input-group">
+                            <label>비밀번호</label>
+                            <input type="password" placeholder="새 비밀번호">
+                        </div>
+                        <div class="input-group">
+                            <label>비밀번호 확인</label>
+                            <input type="password" placeholder="새 비밀번호 확인">
+                        </div>
+                        <div class="input-group">
+                            <label>이름</label>
+                            <input type="text" placeholder="홍길동">
+                        </div>
+                        <div class="input-group">
+                            <label>이메일</label>
+                            <div class="input-with-button">
+                                <input type="email" placeholder="hong@example.com">
+                            
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label>휴대폰 번호</label>
+                            <input type="tel" placeholder="010-1234-5678" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" required>
+                        </div>
+                        <button type="submit" class="btn-save">저장하기</button>
+                    </form>
+                </section>
+
+                <section id="points" class="content-section hidden">
+                    <h3>포인트/쿠폰</h3>
+                    <div class="points-content">
+                        <div class="points-summary">
+                            <div class="points-box">
+                                <h4>사용 가능한 포인트</h4>
+                                <p class="point-amount">0원</p>
+                            </div>
+                            <div class="points-box">
+                                <h4>보유 쿠폰</h4>
+                                <p class="coupon-count">0장</p>
+                            </div>
+                        </div>
+                        
+                        <div class="points-history">
+                            <h4>포인트 내역</h4>
+                            <div class="history-list empty-list">
+                                <div class="empty-message">
+                                    <i class="fas fa-coins"></i>
+                                    <p>포인트 내역이 없습니다.</p>
+                                    <p class="sub-text">상 구매 시 포인트가 적립됩니다.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="coupon-list">
+                            <h4>보유 쿠폰 목록</h4>
+                            <div class="coupon-items empty-list">
+                                <div class="empty-message">
+                                    <i class="fas fa-ticket-alt"></i>
+                                    <p>보유한 쿠폰이 없습니다.</p>
+                                    <p class="sub-text">다양한 이벤트를 통해 쿠폰을 받아보세요!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="withdraw" class="content-section hidden">
+                    <h3>회원 탈퇴</h3>
+                    <div class="withdraw-content">
+                        <p class="warning-text">회원 탈퇴 시 모든 데이터가 삭제되며 복구가 불가능합니다.</p>
+                        <form class="withdraw-form">
+                            <div class="input-group">
+                                <label>비밀번호 확인</label>
+                                <input type="password" name="confirm-password" required>
+                            </div>
+                            <div class="input-group">
+                                <label>탈퇴 사유</label>
+                                <textarea name="withdraw-reason" rows="4"></textarea>
+                            </div>
+                            <button type="submit" class="btn-withdraw">회원 탈퇴</button>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/mypage.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>장바구니 - 티니핑 토이샵</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/cart.css">
+
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="header-upper">
+                    <div class="logo">
+                        <h1><a href="../index.html">티니핑 토이샵</a></h1>
+                    </div>
+                    <div class="search-container">
+                        <div class="search-bar">
+                            <input type="text" placeholder="검색어를 입력하세요">
+                            <button type="submit"><i class="fas fa-search"></i> 검색</button>
+                        </div>
+                        <div class="search-dropdown">
+                            <div class="popular-searches">
+                                <h3>🔥 실시간 인기 검색어</h3>
+                                <ul>
+                                    <li><a href="#"><span class="rank">1</span>레고 프렌즈</a></li>
+                                    <li><a href="#"><span class="rank">2</span>바비 인형</a></li>
+                                    <li><a href="#"><span class="rank">3</span>뽀로로</a></li>
+                                    <li><a href="#"><span class="rank">4</span>타요 버스</a></li>
+                                    <li><a href="#"><span class="rank">5</span>디즈니 피규어</a></li>
+                                    <li><a href="#"><span class="rank">6</span>시크릿 쥬쥬</a></li>
+                                    <li><a href="#"><span class="rank">7</span>콩순이</a></li>
+                                    <li><a href="#"><span class="rank">8</span>헬로카봇</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-menu">
+                        <a href="login.html">로그인</a>
+                        <a href="register.html">회원가입</a>
+                        <a href="cart.html" class="cart-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                        <div class="mypage-dropdown">
+                            <a href="mypage.html" class="mypage-btn">마이페이지 <i class="fas fa-user"></i></a>
+                            <div class="dropdown-content">
+                                <a href="mypage.html#orders">주문내역</a>
+                                <a href="mypage.html#wishlist">찜 목록</a>
+                                <a href="inquiry.html">1:1 문의</a>
+                                <a href="mypage.html#profile">회원정보</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-lower">
+                    <nav class="main-nav">
+                        <ul>
+                            <li>
+                                <a href="new.html">NEW</a>
+                            </li>
+                            <li><a href="best.html">BEST</a></li>
+                            <li><a href="catch_tinyfing.html">캐치 티니핑</a></li>
+                            <li><a href="tinyfing_world.html">티니핑 월드</a></li>
+                            <li><a href="tinyfing_clothes.html">티니핑 의류</a></li>
+                            <li><a href="tinyfing_goods.html">티니핑 굿즈</a></li>
+                            <li>
+                                <a href="event.html">EVENT</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="cart-main">
+        <div class="container">
+            <h1 class="page-title">장바구니</h1>
+
+            <div class="cart-content">
+                <!-- 장바구니 상품 목록 -->
+                <section class="cart-items">
+                    <div class="select-all">
+                        <label>
+                            <input type="checkbox" id="select-all-items">
+                            <span>전체선택</span>
+                        </label>
+                        <button type="button" class="btn-delete-selected">선택삭제</button>
+                    </div>
+
+                    <div class="item-list">
+                        <!-- 장바구니 아이템 -->
+                        <div class="cart-item" data-item-id="1">
+                            <div class="item-checkbox">
+                                <input type="checkbox" class="item-select" checked>
+                            </div>
+                            <div class="item-image">
+                                <img src="../images/product-sample.jpg" alt="상품 이미지">
+                            </div>
+                            <div class="item-info">
+                                <h3 class="product-name">핑크 테디베어 인형</h3>
+                                <p class="product-option">옵션: 대형 / 라이트 핑크</p>
+                                <div class="quantity-control">
+                                    <button type="button" class="btn-decrease">-</button>
+                                    <input type="number" value="1" min="1" max="99" class="quantity-input">
+                                    <button type="button" class="btn-increase">+</button>
+                                </div>
+                                <p class="price">50,000원</p>
+                            </div>
+                            <button type="button" class="btn-remove">×</button>
+                        </div>
+
+                        <div class="cart-item" data-item-id="2">
+                            <div class="item-checkbox">
+                                <input type="checkbox" class="item-select" checked>
+                            </div>
+                            <div class="item-image">
+                                <img src="../images/product-sample2.jpg" alt="상품 이미지">
+                            </div>
+                            <div class="item-info">
+                                <h3 class="product-name">핑크 토끼 인형</h3>
+                                <p class="product-option">옵션: 중형 / 딥 핑크</p>
+                                <div class="quantity-control">
+                                    <button type="button" class="btn-decrease">-</button>
+                                    <input type="number" value="2" min="1" max="99" class="quantity-input">
+                                    <button type="button" class="btn-increase">+</button>
+                                </div>
+                                <p class="price">35,000원</p>
+                            </div>
+                            <button type="button" class="btn-remove">×</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 주문 요약 -->
+                <section class="order-summary">
+                    <h2>주문 요약</h2>
+                    <div class="summary-content">
+                        <dl>
+                            <dt>상품금액</dt>
+                            <dd class="subtotal">120,000원</dd>
+                            
+                            <dt>할인예상금액</dt>
+                            <dd class="discount">-5,000원</dd>
+                            
+                            <dt class="total-label">결제예상금액</dt>
+                            <dd class="total-price">118,000원</dd>
+                        </dl>
+
+                        <button type="button" class="btn-order">
+                            <span class="selected-count">2</span>개 상품 주문하기
+                        </button>
+                    </div>
+
+                    <div class="point-info">
+                        <p>주문 시 <span class="earning-points">1,180</span>P 적립예정</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <!-- 푸터 내용은 common.js에서 동적으로 삽입될테야 -->
+    </footer>
+
+    <script src="../js/common.js"></script>
+    <script src="../js/cart.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

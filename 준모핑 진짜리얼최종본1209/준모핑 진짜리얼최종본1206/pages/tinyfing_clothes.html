@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>티니핑 굿즈 - 티니핑 토이샵</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/tinyfing.css">
+    
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="header-upper">
+                    <div class="logo">
+                        <h1><a href="../index.html">티니핑 토이샵</a></h1>
+                    </div>
+                    <div class="search-container">
+                        <div class="search-bar">
+                            <input type="text" placeholder="검색어를 입력하세요">
+                            <button type="submit"><i class="fas fa-search"></i> 검색</button>
+                        </div>
+                        <div class="search-dropdown">
+                            <div class="popular-searches">
+                                <h3>🔥 실시간 인기 검색어</h3>
+                                <ul>
+                                    <li><a href="#"><span class="rank">1</span>레고 프렌즈</a></li>
+                                    <li><a href="#"><span class="rank">2</span>바비 인형</a></li>
+                                    <li><a href="#"><span class="rank">3</span>뽀로로</a></li>
+                                    <li><a href="#"><span class="rank">4</span>타요 버스</a></li>
+                                    <li><a href="#"><span class="rank">5</span>디즈니 피규어</a></li>
+                                    <li><a href="#"><span class="rank">6</span>시크릿 쥬쥬</a></li>
+                                    <li><a href="#"><span class="rank">7</span>콩순이</a></li>
+                                    <li><a href="#"><span class="rank">8</span>헬로카봇</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-menu">
+                        <a href="login.html">로그인</a>
+                        <a href="register.html">회원가입</a>
+                        <a href="cart.html" class="cart-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                        <div class="mypage-dropdown">
+                            <a href="mypage.html" class="mypage-btn">마이페이지 <i class="fas fa-user"></i></a>
+                            <div class="dropdown-content">
+                                <a href="mypage.html#orders">주문내역</a>
+                                <a href="mypage.html#wishlist">찜 목록</a>
+                                <a href="inquiry.html">1:1 문의</a>
+                                <a href="mypage.html#profile">회원정보</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-lower">
+                    <nav class="main-nav">
+                        <ul>
+                            <li>
+                                <a href="new.html">NEW</a>
+                            </li>
+                            <li><a href="best.html">BEST</a></li>
+                            <li><a href="catch_tinyfing.html">캐치 티니핑</a></li>
+                            <li><a href="tinyfing_world.html">티니핑 월드</a></li>
+                            <li><a href="tinyfing_clothes.html">티니핑 의류</a></li>
+                            <li><a href="tinyfing_goods.html">티니핑 굿즈</a></li>
+                            <li>
+                                <a href="event.html">EVENT</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="event-main" style="margin-top: 80px;">
+        <div class="container">
+            <section class="search-header">
+                <div class="search-info">
+                    <h1 class="search-term">티니핑 의류</h1>
+                </div>
+                
+                <div class="filter-section">
+                    <div class="filter-buttons">
+                        <div class="filter-dropdown">
+                            <button id="filterToggleBtn" class="filter-button">
+                                <i class="fas fa-filter"></i> 필터
+                            </button>
+                            <div id="filterPanel" class="filter-panel">
+                                <button id="closeFilterBtn" class="close-filter">×</button>
+                                <!-- 필터 내용 -->
+                                <div class="filter-group">
+                                    <h6>혜택 정보</h6>
+                                    <div class="filter-options">
+                                        <button class="tag-btn" data-filter="discount">할인상품</button>
+                                        <button class="tag-btn" data-filter="free-shipping">무료배송</button>
+                                        <button class="tag-btn" data-filter="free-return">무료교환반품</button>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="filter-group">
+                                    <h6>배송 유형</h6>
+                                    <div class="filter-options">
+                                        <button class="tag-btn" data-filter="today">오늘출발</button>
+                                        <button class="tag-btn" data-filter="hope-day">일반배송</button>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="filter-group">
+                                    <h6>가격대</h6>
+                                    <div class="price-range">
+                                        <div class="price-inputs">
+                                            <input type="text" id="minPrice" placeholder="최소 3,000" maxlength="9">
+                                            <span>~</span>
+                                            <input type="text" id="maxPrice" placeholder="최대 150,000" maxlength="9">
+                                        </div>
+                                        <button id="applyPrice" class="btn-apply">적용</button>
+                                    </div>
+                                </div>
+                                <div class="filter-actions">
+                                    <button id="resetAllFilters" class="btn-reset">초기화</button>
+                                    <button id="showFilteredProducts" class="btn-apply">적용하기</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="sort-container">
+                        <select class="sort-select">
+                            <option value="newest">최신순</option>
+                            <option value="price-low">가격 낮은순</option>
+                            <option value="price-high">가격 높은순</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <section class="event-section py-5">
+                <h2 class="section-title text-center mb-4">
+                    <span class="highlight">티니핑 의류</span>
+                </h2>
+                
+                <!-- 상품 목록 -->
+                <div class="event-products row g-4">
+                    <!-- 상품 카드 반복 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="../img/티니핑4.jpg" alt="티니핑 굿즈">
+                                <div class="hover-buttons">
+                                    <button class="hover-button" data-tooltip="장바구니에 담기">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </button>
+                                    <button class="hover-button" data-tooltip="바로 구매하기">
+                                        <i class="fas fa-bolt"></i>
+                                    </button>
+                                    <button class="hover-button" data-tooltip="찜하기">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <div class="product-info-text">
+                                    <h4>티니핑 의류</h4>
+                                    <div class="price">
+                                        <span class="discount">35,000원</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 추가 상품 카드들... -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="../img/티니핑4.jpg" alt="티니핑 굿즈">
+                                <div class="hover-buttons">
+                                    <button class="hover-button" data-tooltip="장바구니에 담기">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </button>
+                                    <button class="hover-button" data-tooltip="바로 구매하기">
+                                        <i class="fas fa-bolt"></i>
+                                    </button>
+                                    <button class="hover-button" data-tooltip="찜하기">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <div class="product-info-text">
+                                    <h4>티니핑 의류</h4>
+                                    <div class="price">
+                                        <span class="discount">35,000원</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="../img/티니핑4.jpg" alt="티니핑 굿즈">
+                                <div class="hover-buttons">
+                                    <button class="hover-button" data-tooltip="장바구니에 담기">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </button>
+                                    <button class="hover-button" data-tooltip="바로 구매하기">
+                                        <i class="fas fa-bolt"></i>
+                                    </button>
+                                    <button class="hover-button" data-tooltip="찜하기">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <div class="product-info-text">
+                                    <h4>티니핑 의류</h4>
+                                    <div class="price">
+                                        <span class="discount">35,000원</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="../img/티니핑4.jpg" alt="티니핑 굿즈">
+                                <div class="hover-buttons">
+                                    <button class="hover-button" data-tooltip="장바구니에 담기">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </button>
+                                    <button class="hover-button" data-tooltip="바로 구매하기">
+                                        <i class="fas fa-bolt"></i>
+                                    </button>
+                                    <button class="hover-button" data-tooltip="찜하기">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <div class="product-info-text">
+                                    <h4>티니핑 의류</h4>
+                                    <div class="price">
+                                        <span class="discount">35,000원</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="../img/티니핑4.jpg" alt="티니핑 굿즈">
+                                <div class="hover-buttons">
+                                    <button class="hover-button" data-tooltip="장바구니에 담기">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </button>
+                                    <button class="hover-button" data-tooltip="바로 구매하기">
+                                        <i class="fas fa-bolt"></i>
+                                    </button>
+                                    <button class="hover-button" data-tooltip="찜하기">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <div class="product-info-text">
+                                    <h4>티니핑 의류</h4>
+                                    <div class="price">
+                                        <span class="discount">35,000원</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="../img/티니핑4.jpg" alt="티니핑 굿즈">
+                                <div class="hover-buttons">
+                                    <button class="hover-button" data-tooltip="장바구니에 담기">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </button>
+                                    <button class="hover-button" data-tooltip="바로 구매하기">
+                                        <i class="fas fa-bolt"></i>
+                                    </button>
+                                    <button class="hover-button" data-tooltip="찜하기">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <div class="product-info-text">
+                                    <h4>티니핑 의류</h4>
+                                    <div class="price">
+                                        <span class="discount">35,000원</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/tinyfing.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

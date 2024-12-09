@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1:1 문의 - 티니핑 토이샵</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .inquiry-section {
+            padding: 2rem 0;
+            min-height: calc(100vh - 300px);
+            margin-top: 80px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+
+        .section-title .highlight {
+            color: #ff6b6b;
+        }
+
+        .inquiry-table {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .table th {
+            background: #f8f9fa;
+            font-weight: 600;
+            border-bottom: 2px solid #dee2e6;
+        }
+
+        .table td {
+            vertical-align: middle;
+        }
+
+        .btn-inquiry {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-inquiry:hover {
+            background: #ff5252;
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        .pagination .page-link {
+            color: #ff6b6b;
+        }
+
+        .pagination .page-item.active .page-link {
+            background-color: #ff6b6b;
+            border-color: #ff6b6b;
+            color: white;
+        }
+
+        .table a:hover {
+            color: #ff6b6b !important;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="header-upper">
+                    <div class="logo">
+                        <h1><a href="../index.html">티니핑 토이샵</a></h1>
+                    </div>
+                    <div class="search-container">
+                        <div class="search-bar">
+                            <input type="text" placeholder="검색어를 입력하세요">
+                            <button type="submit"><i class="fas fa-search"></i> 검색</button>
+                        </div>
+                        <div class="search-dropdown">
+                            <div class="popular-searches">
+                                <h3>🔥 실시간 인기 검색어</h3>
+                                <ul>
+                                    <li><a href="#"><span class="rank">1</span>레고 프렌즈</a></li>
+                                    <li><a href="#"><span class="rank">2</span>바비 인형</a></li>
+                                    <li><a href="#"><span class="rank">3</span>뽀로로</a></li>
+                                    <li><a href="#"><span class="rank">4</span>타요 버스</a></li>
+                                    <li><a href="#"><span class="rank">5</span>디즈니 피규어</a></li>
+                                    <li><a href="#"><span class="rank">6</span>시크릿 쥬쥬</a></li>
+                                    <li><a href="#"><span class="rank">7</span>콩순이</a></li>
+                                    <li><a href="#"><span class="rank">8</span>헬로카봇</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-menu">
+                        <a href="login.html">로그인</a>
+                        <a href="register.html">회원가입</a>
+                        <a href="cart.html" class="cart-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                        <div class="mypage-dropdown">
+                            <a href="mypage.html" class="mypage-btn">마이페이지 <i class="fas fa-user"></i></a>
+                            <div class="dropdown-content">
+                                <a href="mypage.html#orders">주문내역</a>
+                                <a href="mypage.html#wishlist">찜 목록</a>
+                                <a href="inquiry.html">1:1 문의</a>
+                                <a href="mypage.html#profile">회원정보</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-lower">
+                    <nav class="main-nav">
+                        <ul>
+                            <li>
+                                <a href="new.html">NEW</a>
+                            </li>
+                            <li><a href="best.html">BEST</a></li>
+                            <li><a href="catch_tinyfing.html">캐치 티니핑</a></li>
+                            <li><a href="tinyfing_world.html">티니핑 월드</a></li>
+                            <li><a href="tinyfing_clothes.html">티니핑 의류</a></li>
+                            <li><a href="tinyfing_goods.html">티니핑 굿즈</a></li>
+                            <li>
+                                <a href="event.html">EVENT</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 메인 컨텐츠 -->
+    <main class="inquiry-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="highlight">1:1</span> 문의
+            </h2>
+            
+            <!-- 문의하기 버튼 -->
+            <div class="text-end mb-3">
+                <a href="inquiry_write.html" class="btn btn-inquiry">
+                    <i class="fas fa-pen me-2"></i>문의하기
+                </a>
+            </div>
+
+            <!-- 게시판 테이블 -->
+            <div class="inquiry-table">
+                <table class="table table-hover mb-0">
+                    <thead>
+                        <tr>
+                            <th width="8%">번호</th>
+                            <th width="45%">제목</th>
+                            <th width="15%">작성자</th>
+                            <th width="15%">등록일</th>
+                            <th width="15%">수정일</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><a href="inquiry_view.html" class="text-decoration-none text-dark">배송 관련 문의드립니다</a></td>
+                            <td>홍길동</td>
+                            <td>2024-01-10</td>
+                            <td>2024-01-10</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><a href="inquiry_view.html" class="text-decoration-none text-dark">상품 재입고 문의</a></td>
+                            <td>김철수</td>
+                            <td>2024-01-09</td>
+                            <td>2024-01-09</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><a href="inquiry_view.html" class="text-decoration-none text-dark">교환/반품 절차 문의</a></td>
+                            <td>이영희</td>
+                            <td>2024-01-08</td>
+                            <td>2024-01-09</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td><a href="inquiry_view.html" class="text-decoration-none text-dark">결제 오류 관련 문의</a></td>
+                            <td>박지민</td>
+                            <td>2024-01-07</td>
+                            <td>2024-01-07</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td><a href="inquiry_view.html" class="text-decoration-none text-dark">포인트 적립 문의</a></td>
+                            <td>최수진</td>
+                            <td>2024-01-06</td>
+                            <td>2024-01-06</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 페이지네이션 -->
+            <nav aria-label="Page navigation" class="mt-4">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">이전</a>
+                    </li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">다음</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="py-5">
+        <div class="container">
+            <p class="text-center mb-0">&copy; 2024 티니핑 토이샵. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

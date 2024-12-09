@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>검색 결과 - 티니핑 토이샵</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/search-results.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="header-upper">
+                    <div class="logo">
+                        <h1><a href="../index.html">티니핑 토이샵</a></h1>
+                    </div>
+                    <div class="search-container">
+                        <div class="search-bar">
+                            <input type="text" placeholder="검색어를 입력하세요">
+                            <button type="submit"><i class="fas fa-search"></i> 검색</button>
+                        </div>
+                        <div class="search-dropdown">
+                            <div class="popular-searches">
+                                <h3>🔥 실시간 인기 검색어</h3>
+                                <ul>
+                                    <li><a href="#"><span class="rank">1</span>레고 프렌즈</a></li>
+                                    <li><a href="#"><span class="rank">2</span>바비 인형</a></li>
+                                    <li><a href="#"><span class="rank">3</span>뽀로로</a></li>
+                                    <li><a href="#"><span class="rank">4</span>타요 버스</a></li>
+                                    <li><a href="#"><span class="rank">5</span>디즈니 피규어</a></li>
+                                    <li><a href="#"><span class="rank">6</span>시크릿 쥬쥬</a></li>
+                                    <li><a href="#"><span class="rank">7</span>콩순이</a></li>
+                                    <li><a href="#"><span class="rank">8</span>헬로카봇</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-menu">
+                        <a href="login.html">로그인</a>
+                        <a href="register.html">회원가입</a>
+                        <a href="cart.html" class="cart-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                        <div class="mypage-dropdown">
+                            <a href="mypage.html" class="mypage-btn">마이페이지 <i class="fas fa-user"></i></a>
+                            <div class="dropdown-content">
+                                <a href="mypage.html#orders">주문내역</a>
+                                <a href="mypage.html#wishlist">찜 목록</a>
+                                <a href="inquiry.html">1:1 문의</a>
+                                <a href="mypage.html#profile">회원정보</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-lower">
+                    <nav class="main-nav">
+                        <ul>
+                            <li>
+                                <a href="new.html">NEW</a>
+                            </li>
+                            <li><a href="best.html">BEST</a></li>
+                            <li><a href="catch_tinyfing.html">캐치 티니핑</a></li>
+                            <li><a href="tinyfing_world.html">티니핑 월드</a></li>
+                            <li><a href="tinyfing_clothes.html">티니핑 의류</a></li>
+                            <li><a href="tinyfing_goods.html">티니핑 굿즈</a></li>
+                            <li>
+                                <a href="event.html">EVENT</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="search-results-container">
+        <section class="search-header">
+            <div class="search-info">
+                <h1 class="search-term">"티니핑 인형" 검색 결과</h1>
+                <span class="search-count">총 20개의 상품</span>
+            </div>
+            
+            <div class="filter-section">
+                <div class="filter-buttons">
+                    <div class="filter-dropdown">
+                        <button id="filterToggleBtn" class="filter-button">
+                            <i class="fas fa-filter"></i> 필터
+                        </button>
+                        <div id="filterPanel" class="filter-panel">
+                            <button id="closeFilterBtn" class="close-filter">×</button>
+                            <!-- 필터 내용 -->
+                            <div class="filter-group">
+                                <h6>혜택 정보</h6>
+                                <div class="filter-options">
+                                    <button class="tag-btn" data-filter="discount">할인상품</button>
+                                    <button class="tag-btn" data-filter="free-shipping">무료배송</button>
+                                    <button class="tag-btn" data-filter="free-return">무료교환반품</button>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="filter-group">
+                                <h6>배송 유형</h6>
+                                <div class="filter-options">
+                                    <button class="tag-btn" data-filter="today">오늘출발</button>
+                                    <button class="tag-btn" data-filter="hope-day">일반배송</button>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="filter-group">
+                                <h6>가격대</h6>
+                                <div class="price-range">
+                                    <div class="price-inputs">
+                                        <input type="text" id="minPrice" placeholder="최소 3,000" maxlength="9">
+                                        <span>~</span>
+                                        <input type="text" id="maxPrice" placeholder="최대 150,000" maxlength="9">
+                                    </div>
+                                    <button id="applyPrice" class="btn-apply">적용</button>
+                                </div>
+                            </div>
+                            <div class="filter-actions">
+                                <button id="resetAllFilters" class="btn-reset">초기화</button>
+                                <button id="showFilteredProducts" class="btn-apply">적용하기</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <select class="sort-select">
+                    <option value="newest">최신순</option>
+                    <option value="price-low">가격 낮은순</option>
+                    <option value="price-high">가격 높은순</option>
+                </select>
+            </div>
+        </section>
+
+        <section class="search-results">
+            <!-- 검색 결과 상품들 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../img/티니핑_배너사진.PNG" alt="티니핑 시그니처 인형">
+                    <div class="product-buttons">
+                        <button class="product-button">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="tooltip">장바구니</span>
+                        </button>
+                        <button class="product-button">
+                            <i class="fas fa-heart"></i>
+                            <span class="tooltip">찜하기</span>
+                        </button>
+                        <button class="product-button">
+                            <i class="fas fa-credit-card"></i>
+                            <span class="tooltip">구매하기</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">티니핑 시그니처 인형</h3>
+                    <p class="product-price">29,900원</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../images/products/doll2.jpg" alt="티니핑 미니 인형">
+                    <div class="product-buttons">
+                        <button class="product-button">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="tooltip">장바구니</span>
+                        </button>
+                        <button class="product-button">
+                            <i class="fas fa-heart"></i>
+                            <span class="tooltip">찜하기</span>
+                        </button>
+                        <button class="product-button">
+                            <i class="fas fa-credit-card"></i>
+                            <span class="tooltip">구매하기</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">티니핑 미니 인형</h3>
+                    <p class="product-price">15,900원</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../images/products/doll3.jpg" alt="티니핑 잠옷 인형">
+                    <div class="product-buttons">
+                        <button class="product-button">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="tooltip">장바구니</span>
+                        </button>
+                        <button class="product-button">
+                            <i class="fas fa-heart"></i>
+                            <span class="tooltip">찜하기</span>
+                        </button>
+                        <button class="product-button">
+                            <i class="fas fa-credit-card"></i>
+                            <span class="tooltip">구매하기</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">티니핑 잠옷 인형</h3>
+                    <p class="product-price">32,000원</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../images/products/doll4.jpg" alt="티니핑 왕관 인형">
+                    <div class="product-buttons">
+                        <button class="product-button">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="tooltip">장바구니</span>
+                        </button>
+                        <button class="product-button">
+                            <i class="fas fa-heart"></i>
+                            <span class="tooltip">찜하기</span>
+                        </button>
+                        <button class="product-button">
+                            <i class="fas fa-credit-card"></i>
+                            <span class="tooltip">구매하기</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">티니핑 왕관 인형</h3>
+                    <p class="product-price">35,000원</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../images/products/doll5.jpg" alt="티니핑 커플 인형세트">
+                    <div class="product-buttons">
+                        <button class="product-button">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="tooltip">장바구니</span>
+                        </button>
+                        <button class="product-button">
+                            <i class="fas fa-heart"></i>
+                            <span class="tooltip">찜하기</span>
+                        </button>
+                        <button class="product-button">
+                            <i class="fas fa-credit-card"></i>
+                            <span class="tooltip">구매하기</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">티니 커플 인형세트</h3>
+                    <p class="product-price">55,000원</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../images/products/doll6.jpg" alt="티니핑 여름 버전 인형">
+                    <div class="product-buttons">
+                        <button class="product-button">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="tooltip">장바구니</span>
+                        </button>
+                        <button class="product-button">
+                            <i class="fas fa-heart"></i>
+                            <span class="tooltip">찜하기</span>
+                        </button>
+                        <button class="product-button">
+                            <i class="fas fa-credit-card"></i>
+                            <span class="tooltip">구매하기</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">티니핑 여름 버전 인형</h3>
+                    <p class="product-price">27,900원</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../images/products/doll7.jpg" alt="티니핑 겨울 버전 인형">
+                    <div class="product-buttons">
+                        <button class="product-button">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="tooltip">장바구니</span>
+                        </button>
+                        <button class="product-button">
+                            <i class="fas fa-heart"></i>
+                            <span class="tooltip">찜하기</span>
+                        </button>
+                        <button class="product-button">
+                            <i class="fas fa-credit-card"></i>
+                            <span class="tooltip">구매하기</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">티니핑 겨울 버전 인형</h3>
+                    <p class="product-price">27,900원</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../images/products/doll8.jpg" alt="티니핑 키링 인형">
+                    <div class="product-buttons">
+                        <button class="product-button">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="tooltip">장바구니</span>
+                        </button>
+                        <button class="product-button">
+                            <i class="fas fa-heart"></i>
+                            <span class="tooltip">찜하기</span>
+                        </button>
+                        <button class="product-button">
+                            <i class="fas fa-credit-card"></i>
+                            <span class="tooltip">구매하기</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">티니핑 키링 인형</h3>
+                    <p class="product-price">12,900원</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../images/products/doll9.jpg" alt="티니핑 대형 인형">
+                    <div class="product-buttons">
+                        <button class="product-button">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="tooltip">장바구니</span>
+                        </button>
+                        <button class="product-button">
+                            <i class="fas fa-heart"></i>
+                            <span class="tooltip">찜하기</span>
+                        </button>
+                        <button class="product-button">
+                            <i class="fas fa-credit-card"></i>
+                            <span class="tooltip">구매하기</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">티니핑 대형 인형</h3>
+                    <p class="product-price">89,000원</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../images/products/doll10.jpg" alt="티니핑 한복 인형">
+                    <div class="product-buttons">
+                        <button class="product-button">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="tooltip">장바구니</span>
+                        </button>
+                        <button class="product-button">
+                            <i class="fas fa-heart"></i>
+                            <span class="tooltip">찜하기</span>
+                        </button>
+                        <button class="product-button">
+                            <i class="fas fa-credit-card"></i>
+                            <span class="tooltip">구매하기</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">티니핑 한복 인형</h3>
+                    <p class="product-price">45,000원</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../images/products/doll11.jpg" alt="티니핑 크리스마스 인형">
+                    <div class="product-buttons">
+                        <button class="product-button">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="tooltip">장바구니</span>
+                        </button>
+                        <button class="product-button">
+                            <i class="fas fa-heart"></i>
+                            <span class="tooltip">찜하기</span>
+                        </button>
+                        <button class="product-button">
+                            <i class="fas fa-credit-card"></i>
+                            <span class="tooltip">구매하기</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">티니핑 크리스마스 인형</h3>
+                    <p class="product-price">32,900원</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../images/products/doll12.jpg" alt="티니핑 학생복 인형">
+                    <div class="product-buttons">
+                        <button class="product-button">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="tooltip">장바구니</span>
+                        </button>
+                        <button class="product-button">
+                            <i class="fas fa-heart"></i>
+                            <span class="tooltip">찜하기</span>
+                        </button>
+                        <button class="product-button">
+                            <i class="fas fa-credit-card"></i>
+                            <span class="tooltip">구매하기</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">티니핑 학생복 인형</h3>
+                    <p class="product-price">34,900원</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../images/products/doll13.jpg" alt="티니핑 생일 특별판 인형">
+                    <div class="product-buttons">
+                        <button class="product-button">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="tooltip">장바구니</span>
+                        </button>
+                        <button class="product-button">
+                            <i class="fas fa-heart"></i>
+                            <span class="tooltip">찜하기</span>
+                        </button>
+                        <button class="product-button">
+                            <i class="fas fa-credit-card"></i>
+                            <span class="tooltip">구매하기</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">티니핑 생일 특별판 인형</h3>
+                    <p class="product-price">39,900원</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../images/products/doll13.jpg" alt="티니핑 생일 특별판 인형">
+                    <div class="product-buttons">
+                        <button class="product-button">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="tooltip">장바구니</span>
+                        </button>
+                        <button class="product-button">
+                            <i class="fas fa-heart"></i>
+                            <span class="tooltip">찜하기</span>
+                        </button>
+                        <button class="product-button">
+                            <i class="fas fa-credit-card"></i>
+                            <span class="tooltip">구매하기</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">티니핑 생일 특별판 인형</h3>
+                    <p class="product-price">39,900원</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../images/products/doll13.jpg" alt="티니핑 생일 특별판 인형">
+                    <div class="product-buttons">
+                        <button class="product-button">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="tooltip">장바구니</span>
+                        </button>
+                        <button class="product-button">
+                            <i class="fas fa-heart"></i>
+                            <span class="tooltip">찜하기</span>
+                        </button>
+                        <button class="product-button">
+                            <i class="fas fa-credit-card"></i>
+                            <span class="tooltip">구매하기</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">티니핑 생일 특별판 인형</h3>
+                    <p class="product-price">39,900원</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../images/products/doll13.jpg" alt="티니핑 생일 특별판 인형">
+                    <div class="product-buttons">
+                        <button class="product-button">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="tooltip">장바구니</span>
+                        </button>
+                        <button class="product-button">
+                            <i class="fas fa-heart"></i>
+                            <span class="tooltip">찜하기</span>
+                        </button>
+                        <button class="product-button">
+                            <i class="fas fa-credit-card"></i>
+                            <span class="tooltip">구매하기</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">티니핑 생일 특별판 인형</h3>
+                    <p class="product-price">39,900원</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../images/products/doll13.jpg" alt="티니핑 생일 특별판 인형">
+                    <div class="product-buttons">
+                        <button class="product-button">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="tooltip">장바구니</span>
+                        </button>
+                        <button class="product-button">
+                            <i class="fas fa-heart"></i>
+                            <span class="tooltip">찜하기</span>
+                        </button>
+                        <button class="product-button">
+                            <i class="fas fa-credit-card"></i>
+                            <span class="tooltip">구매하기</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">티니핑 생일 특별판 인형</h3>
+                    <p class="product-price">39,900원</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../images/products/doll13.jpg" alt="티니핑 생일 특별판 인형">
+                    <div class="product-buttons">
+                        <button class="product-button">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="tooltip">장바구니</span>
+                        </button>
+                        <button class="product-button">
+                            <i class="fas fa-heart"></i>
+                            <span class="tooltip">찜하기</span>
+                        </button>
+                        <button class="product-button">
+                            <i class="fas fa-credit-card"></i>
+                            <span class="tooltip">구매하기</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">티니핑 생일 특별판 인형</h3>
+                    <p class="product-price">39,900원</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../images/products/doll13.jpg" alt="티니핑 생일 특별판 인형">
+                    <div class="product-buttons">
+                        <button class="product-button">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="tooltip">장바구니</span>
+                        </button>
+                        <button class="product-button">
+                            <i class="fas fa-heart"></i>
+                            <span class="tooltip">찜하기</span>
+                        </button>
+                        <button class="product-button">
+                            <i class="fas fa-credit-card"></i>
+                            <span class="tooltip">구매하기</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">티니핑 생일 특별판 인형</h3>
+                    <p class="product-price">39,900원</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../images/products/doll13.jpg" alt="티니핑 생일 특별판 인형">
+                    <div class="product-buttons">
+                        <button class="product-button">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="tooltip">장바구니</span>
+                        </button>
+                        <button class="product-button">
+                            <i class="fas fa-heart"></i>
+                            <span class="tooltip">찜하기</span>
+                        </button>
+                        <button class="product-button">
+                            <i class="fas fa-credit-card"></i>
+                            <span class="tooltip">구매하기</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">티니핑 생일 특별판 인형</h3>
+                    <p class="product-price">39,900원</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../images/products/doll13.jpg" alt="티니핑 생일 특별판 인형">
+                    <div class="product-buttons">
+                        <button class="product-button">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="tooltip">장바구니</span>
+                        </button>
+                        <button class="product-button">
+                            <i class="fas fa-heart"></i>
+                            <span class="tooltip">찜하기</span>
+                        </button>
+                        <button class="product-button">
+                            <i class="fas fa-credit-card"></i>
+                            <span class="tooltip">구매하기</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">티니핑 생일 특별판 인형</h3>
+                    <p class="product-price">39,900원</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../images/products/doll13.jpg" alt="티니핑 생일 특별판 인형">
+                    <div class="product-buttons">
+                        <button class="product-button">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="tooltip">장바구니</span>
+                        </button>
+                        <button class="product-button">
+                            <i class="fas fa-heart"></i>
+                            <span class="tooltip">찜하기</span>
+                        </button>
+                        <button class="product-button">
+                            <i class="fas fa-credit-card"></i>
+                            <span class="tooltip">구매하기</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">티니핑 생일 특별판 인형</h3>
+                    <p class="product-price">39,900원</p>
+                </div>
+            </div>
+        <!-- 페이지네이션 섹션 -->
+            <div class="pagination">
+                <button class="prev-page">이전</button>
+                <div class="page-numbers">
+                    <!-- 페이지 번호 버튼들이 여기에 동적으로 생성됨 -->
+                </div>
+                <button class="next-page">다음</button>
+            </div>
+        </div>
+    <script src="../js/search-results.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

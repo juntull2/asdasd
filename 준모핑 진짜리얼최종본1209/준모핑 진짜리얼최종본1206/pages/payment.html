@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>결제하기 - 티니핑 토이샵</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/payment.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .payment-main .container {
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .payment-content {
+            grid-column: 1;
+        }
+
+        .payment-sidebar {
+            grid-column: 2;
+            position: sticky;
+            top: 100px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+        }
+
+        .payment-amount {
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-payment {
+            width: 100%;
+        }
+
+        @media (max-width: 992px) {
+            .payment-main .container {
+                grid-template-columns: 1fr;
+            }
+
+            .payment-sidebar {
+                position: relative;
+                top: 0;
+                grid-column: 1;
+            }
+        }
+
+        .delivery-info .address-input input {
+            width: 100%;
+        }
+
+        .point-inputs {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .btn-use-all {
+            padding: 12px 20px;
+            background-color: white;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            border-radius: 8px;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .available-points {
+            margin-top: 8px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .available-points span {
+            color: var(--accent-color);
+            font-weight: 700;
+        }
+
+        .btn-confirm-transfer {
+            width: 100%;
+            padding: 15px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-confirm-transfer:hover {
+            background-color: var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="header-upper">
+                    <div class="logo">
+                        <h1><a href="../index.html">티니핑 토이샵</a></h1>
+                    </div>
+                    <div class="search-container">
+                        <div class="search-bar">
+                            <input type="text" placeholder="검색어를 입력하세요">
+                            <button type="submit"><i class="fas fa-search"></i> 검색</button>
+                        </div>
+                        <div class="search-dropdown">
+                            <div class="popular-searches">
+                                <h3>🔥 실시간 인기 검색어</h3>
+                                <ul>
+                                    <li><a href="#"><span class="rank">1</span>레고 프렌즈</a></li>
+                                    <li><a href="#"><span class="rank">2</span>바비 인형</a></li>
+                                    <li><a href="#"><span class="rank">3</span>뽀로로</a></li>
+                                    <li><a href="#"><span class="rank">4</span>타요 버스</a></li>
+                                    <li><a href="#"><span class="rank">5</span>디즈니 피규어</a></li>
+                                    <li><a href="#"><span class="rank">6</span>시크릿 쥬쥬</a></li>
+                                    <li><a href="#"><span class="rank">7</span>콩순이</a></li>
+                                    <li><a href="#"><span class="rank">8</span>헬로카봇</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-menu">
+                        <a href="login.html">로그인</a>
+                        <a href="register.html">회원가입</a>
+                        <a href="cart.html" class="cart-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                        <div class="mypage-dropdown">
+                            <a href="mypage.html" class="mypage-btn">마이페이지 <i class="fas fa-user"></i></a>
+                            <div class="dropdown-content">
+                                <a href="mypage.html#orders">주문내역</a>
+                                <a href="mypage.html#wishlist">찜 목록</a>
+                                <a href="inquiry.html">1:1 문의</a>
+                                <a href="mypage.html#profile">회원정보</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-lower">
+                    <nav class="main-nav">
+                        <ul>
+                            <li>
+                                <a href="new.html">NEW</a>
+                            </li>
+                            <li><a href="best.html">BEST</a></li>
+                            <li><a href="catch_tinyfing.html">캐치 티니핑</a></li>
+                            <li><a href="tinyfing_world.html">티니핑 월드</a></li>
+                            <li><a href="tinyfing_clothes.html">티니핑 의류</a></li>
+                            <li><a href="tinyfing_goods.html">티니핑 굿즈</a></li>
+                            <li>
+                                <a href="event.html">EVENT</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="payment-main">
+        <div class="container">
+            <div class="payment-content">
+                <h1 class="page-title">결제하기</h1>
+
+                <!-- 주문 상품 -->
+                <section class="order-products">
+                    <h2>주문 상품</h2>
+                    <div class="product-list">
+                        <div class="product-item">
+                            <img src="../images/product1.jpg" alt="상품 이미지">
+                            <div class="product-info">
+                                <h3>티니핑 봉제인형</h3>
+                                <p class="product-option">옵션: 핑크 / 대형</p>
+                                <p class="product-price">36,000원 (1개)</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 배송 정보 -->
+                <section class="delivery-info">
+                    <h2>배송 정보</h2>
+                    <div class="info-form">
+                        <div class="form-group">
+                            <label>받는 사람</label>
+                            <input type="text" placeholder="이름">
+                        </div>
+                        <div class="form-group">
+                            <label>연락처</label>
+                            <input type="tel" placeholder="010-1234-5678">
+                        </div>
+                        <div class="form-group">
+                            <label>배송지</label>
+                            <div class="address-input">
+                                <input type="text" placeholder="서울특별시 강남구 테헤란로 123" readonly>
+                            </div>
+                            <input type="text" placeholder="456호" placeholder="상세주소">
+                        </div>
+                        <div class="form-group">
+                            <label>배송 요청사항</label>
+                            <select>
+                                <option>배송 시 요청사항을 선택해주세요</option>
+                                <option>부재 시 경비실에 맡겨주세요</option>
+                                <option>현관문 앞에 놓아주세요</option>
+                                <option>배송 전 연락 부탁드립니다</option>
+                                <option>직접 입력</option>
+                            </select>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 포인트/쿠폰 -->
+                <section class="points-coupons">
+                    <h2>포인트/쿠폰</h2>
+                    <div class="info-form">
+                        <div class="form-group">
+                            <label>포인트 사용</label>
+                            <div class="point-inputs">
+                                <input type="number" name="use-points" placeholder="0" min="0" max="5000">
+                                <button type="button" class="btn-use-all" onclick="useAllPoints()">모두 사용</button>
+                            </div>
+                            <p class="available-points">사용 가능 포인트: <span>5,000P</span></p>
+                        </div>
+                        <div class="form-group">
+                            <label>쿠폰 적용</label>
+                            <select name="coupon">
+                                <option value="">사용 가능한 쿠폰 선택</option>
+                                <option value="welcome">신규 가입 할인 쿠폰 (3,000원)</option>
+                                <option value="special">특별 할인 쿠폰 (5,000원)</option>
+                            </select>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 결제 수단 -->
+                <section class="payment-method">
+                    <h2>결제 수단</h2>
+                    <div class="payment-options">
+                        <label class="payment-option">
+                            <input type="radio" name="paymentMethod" value="card" checked>
+                            <span class="option-text">신용카드</span>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="paymentMethod" value="bank">
+                            <span class="option-text">무통장입금</span>
+                        </label>
+                    </div>
+
+                    <!-- 신용카드 결제 폼 -->
+                    <div id="cardPayment" class="payment-details" style="display: block;">
+                        <div class="card-form">
+                            <div class="form-group">
+                                <label>카드 번호</label>
+                                <input type="text" placeholder="0000-0000-0000-0000" maxlength="19">
+                            </div>
+                            <div class="form-group">
+                                <label>유효기간</label>
+                                <input type="text" placeholder="MM/YY" maxlength="5">
+                            </div>
+                            <div class="form-group">
+                                <label>CVC</label>
+                                <input type="text" placeholder="000" maxlength="3">
+                            </div>
+                            <div class="form-group">
+                                <label>카드 비밀번호</label>
+                                <input type="password" placeholder="앞 2자리" maxlength="2">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- 결제 금액 (사이드바) -->
+            <div class="payment-sidebar">
+                <section class="payment-amount">
+                    <h2>결제 금액</h2>
+                    <div class="amount-details">
+                        <div class="amount-row">
+                            <span>상품 금액</span>
+                            <span>36,000원</span>
+                        </div>
+                        <div class="amount-row">
+                            <span>배송비</span>
+                            <span>0원</span>
+                        </div>
+                        <div class="amount-row total">
+                            <span>최종 결제 금액</span>
+                            <span>36,000원</span>
+                        </div>
+                    </div>
+                </section>
+                <button type="button" class="btn-payment" onclick="processPayment()">36,000원 결제하기</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- 가상계좌 모달 -->
+    <div class="modal fade" id="virtualAccountModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">가상계좌 입금 정보</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="virtual-account">
+                        <h3>입금 계좌 정보</h3>
+                        <div class="account-info">
+                            <p>은행: 신한은행</p>
+                            <p>예금주: 티니핑 토이샵</p>
+                            <p>금액: 36,000원</p>
+                        </div>
+                        <div class="account-number">110-123-456789</div>
+                        <button class="copy-button" onclick="copyAccountNumber()">
+                            <i class="fas fa-copy"></i> 계좌번호 복사
+                        </button>
+                        <p class="mt-4 text-muted">
+                            * 24시간 이내 입금이 완료되지 않을 경우 주문이 취소됩니다.<br>
+                            * 입금자명이 다를 경우 입금이 지연될 수 있습니다.
+                        </p>
+                        <button class="btn-confirm-transfer mt-4" onclick="confirmTransfer()">
+                            입금 완료
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <!-- 푸터 내용은 index.html과 동일 -->
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="../js/payment.js"></script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>결제 완료 - 티니핑 토이샵</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/payment-complete.css">
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="header-upper">
+                    <div class="logo">
+                        <h1><a href="../index.html">티니핑 토이샵</a></h1>
+                    </div>
+                    <div class="search-container">
+                        <div class="search-bar">
+                            <input type="text" placeholder="검색어를 입력하세요">
+                            <button type="submit"><i class="fas fa-search"></i> 검색</button>
+                        </div>
+                        <div class="search-dropdown">
+                            <div class="popular-searches">
+                                <h3>🔥 실시간 인기 검색어</h3>
+                                <ul>
+                                    <li><a href="#"><span class="rank">1</span>레고 프렌즈</a></li>
+                                    <li><a href="#"><span class="rank">2</span>바비 인형</a></li>
+                                    <li><a href="#"><span class="rank">3</span>뽀로로</a></li>
+                                    <li><a href="#"><span class="rank">4</span>타요 버스</a></li>
+                                    <li><a href="#"><span class="rank">5</span>디즈니 피규어</a></li>
+                                    <li><a href="#"><span class="rank">6</span>시크릿 쥬쥬</a></li>
+                                    <li><a href="#"><span class="rank">7</span>콩순이</a></li>
+                                    <li><a href="#"><span class="rank">8</span>헬로카봇</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-menu">
+                        <a href="login.html">로그인</a>
+                        <a href="register.html">회원가입</a>
+                        <a href="cart.html" class="cart-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                        <div class="mypage-dropdown">
+                            <a href="mypage.html" class="mypage-btn">마이페이지 <i class="fas fa-user"></i></a>
+                            <div class="dropdown-content">
+                                <a href="mypage.html#orders">주문내역</a>
+                                <a href="mypage.html#wishlist">찜 목록</a>
+                                <a href="inquiry.html">1:1 문의</a>
+                                <a href="mypage.html#profile">회원정보</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-lower">
+                    <nav class="main-nav">
+                        <ul>
+                            <li>
+                                <a href="new.html">NEW</a>
+                            </li>
+                            <li><a href="best.html">BEST</a></li>
+                            <li><a href="catch_tinyfing.html">캐치 티니핑</a></li>
+                            <li><a href="tinyfing_world.html">티니핑 월드</a></li>
+                            <li><a href="tinyfing_clothes.html">티니핑 의류</a></li>
+                            <li><a href="tinyfing_goods.html">티니핑 굿즈</a></li>
+                            <li>
+                                <a href="event.html">EVENT</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="payment-complete-main">
+        <div class="container">
+            <div id="bankTransferPopup" class="popup-overlay" style="display: none;">
+                <div class="popup-content">
+                    <h2>무통장 입금 안내</h2>
+                    <p>입금 계좌: 신한은행 123-456-789012</p>
+                    <p>예금주: 티니핑토이샵</p>
+                    <p>입금 금액: <span id="transferAmount">48,000원</span></p>
+                    <button type="button" class="btn-confirm-transfer" onclick="confirmTransfer()">입금 완료</button>
+                </div>
+            </div>
+
+            <div class="complete-message">
+                <img src="../img/티니핑2.jpg" alt="결제 완료" class="complete-icon">
+                <h1>결제가 완료되었습니다</h1>
+                <p class="order-number">주문번호: <span id="orderNumber">2024020100001</span></p>
+            </div>
+
+            <section class="points-coupons">
+                <h2>포인트/쿠폰 정보</h2>
+                <div class="info-content">
+                    <dl>
+                        <dt>사용 포인트</dt>
+                        <dd id="usedPoints">5,000P</dd>
+                        
+                        <dt>잔여 포인트</dt>
+                        <dd id="remainingPoints">2,500P</dd>
+                        
+                        <dt>사용 쿠폰</dt>
+                        <dd id="usedCoupon">신규 가입 할인 쿠폰</dd>
+                    </dl>
+                </div>
+            </section>
+
+            <section class="order-summary_2">
+                <h2>주문 내역</h2>
+                <div class="order-items">
+                    <div class="order-item">
+                        <img src="../images/product-sample.jpg" alt="상품 이미지" class="product-image">
+                        <div class="item-details">
+                            <h3 class="product-name">핑크 테디베어 인형</h3>
+                            <p class="product-option">옵션: 대형 / 라이트 핑크</p>
+                            <p class="quantity">수량: 1개</p>
+                            <p class="price">50,000원</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="delivery-info">
+                <h2>배송 정보</h2>
+                <div class="info-content">
+                    <dl>
+                        <dt>받는 분</dt>
+                        <dd id="receiverName">홍길동</dd>
+                        
+                        <dt>연락처</dt>
+                        <dd id="receiverPhone">010-1234-5678</dd>
+                        
+                        <dt>배송지</dt>
+                        <dd id="deliveryAddress">서울특별시 강남구 테헤란로 123 우리빌딩 4층</dd>
+                        
+                        <dt>배송 요청사항</dt>
+                        <dd id="deliveryRequest">부재시 경비실에 맡겨주세요</dd>
+                    </dl>
+                </div>
+            </section>
+
+            <section class="payment-info">
+                <h2>결제 정보</h2>
+                <div class="info-content">
+                    <dl>
+                        <dt>상품 금액</dt>
+                        <dd class="original-price">50,000원</dd>
+                        
+                        <dt>배송비</dt>
+                        <dd class="shipping-fee">3,000원</dd>
+                        
+                        <dt>포인트 사용</dt>
+                        <dd class="points-used">-5,000원</dd>
+                        
+                        <dt>쿠폰 할인</dt>
+                        <dd class="coupon-discount">0원</dd>
+                        
+                        <dt class="total">총 결제 금액</dt>
+                        <dd class="total total-price">48,000원</dd>
+                        
+                        <dt>결제 수단</dt>
+                        <dd class="payment-method">신용카드</dd>
+                    </dl>
+                </div>
+            </section>
+
+            <div class="button-group">
+                <button type="button" class="btn-order-detail" onclick="location.href='mypage.html'">주문 상세보기</button>
+                <button type="button" class="btn-continue-shopping" onclick="location.href='index.html'">쇼핑 계속하기</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <!-- 푸터 내용은 common.js에서 동적으로 삽입됩니다 -->
+    </footer>
+
+    <script src="../js/common.js"></script>
+    <script src="../js/payment-complete.js"></script>
+</body>
+</html>

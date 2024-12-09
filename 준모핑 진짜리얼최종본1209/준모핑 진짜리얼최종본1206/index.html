@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>티니핑 토이샵</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+        /* Custom styles not moved to style.css can go here */
+    </style>
+</head>
+<body>
+    <!-- 헤더 -->
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="header-upper">
+                    <div class="logo">
+                        <h1><a href="index.html">티니핑 토이샵</a></h1>
+                    </div>
+                    <div class="search-container">
+                        <div class="search-bar">
+                            <input type="text" placeholder="검색어를 입력하세요">
+                            <button type="submit"><i class="fas fa-search"></i> 검색</button>
+                        </div>
+                        <div class="search-dropdown">
+                            <div class="popular-searches">
+                                <h3>🔥 실시간 인기 검색어</h3>
+                                <ul>
+                                    <li><a href="#"><span class="rank">1</span>레고 프렌즈</a></li>
+                                    <li><a href="#"><span class="rank">2</span>바비 인형</a></li>
+                                    <li><a href="#"><span class="rank">3</span>뽀로로</a></li>
+                                    <li><a href="#"><span class="rank">4</span>타요 버스</a></li>
+                                    <li><a href="#"><span class="rank">5</span>디즈니 피규어</a></li>
+                                    <li><a href="#"><span class="rank">6</span>시크릿 쥬쥬</a></li>
+                                    <li><a href="#"><span class="rank">7</span>콩순이</a></li>
+                                    <li><a href="#"><span class="rank">8</span>헬로카봇</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-menu">
+                        <a href="pages/login.html">로그인</a>
+                        <a href="pages/register.html">회원가입</a>
+                        <a href="pages/cart.html" class="cart-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                        <div class="mypage-dropdown">
+                            <a href="pages/mypage.html" class="mypage-btn">마이페이지 <i class="fas fa-user"></i></a>
+                            <div class="dropdown-content">
+                                <a href="pages/mypage.html#orders">주문내역</a>
+                                <a href="pages/mypage.html#wishlist">찜 목록</a>
+                                <a href="pages/inquiry.html">1:1 문의</a>
+                                <a href="pages/mypage.html#profile">회원정보</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-lower">
+                    <nav class="main-nav">
+                        <ul>
+                            <li>
+                                <a href="pages/new.html">NEW</a>
+                            </li>
+                            <li><a href="pages/best.html">BEST</a></li>
+                            <li><a href="pages/catch_tinyfing.html">캐치 티니핑</a></li>
+                            <li><a href="pages/tinyfing_world.html">티니핑 월드</a></li>
+                            <li><a href="pages/tinyfing_clothes.html">티니핑 의류</a></li>
+                            <li><a href="pages/tinyfing_goods.html">티니핑 굿즈</a></li>
+                            <li>
+                                <a href="pages/event.html">EVENT</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 메인 콘텐츠 영역 -->
+    <main style="margin-top: 80px;">
+       <!-- 3D 이미지 슬라이더 섹션 -->
+<section class="slider-section py-5">
+    <div class="container">
+        <div class="swiper mainSwiper">
+            <div class="swiper-wrapper">
+                <!-- 슬라이드 1 -->
+                <div class="swiper-slide">
+                    <div class="slide-content">
+                        <img src="images/slider/티니핑_배너사진.PNG" alt="신상품 소개">
+                        <div class="slide-caption">
+                            <h5>신상품 출시!</h5>
+                            <p>티니핑의 새로운 컬렉션을 만나보세요</p>
+                            <a href="#" class="btn btn-primary">자세히 보기</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 슬라이드 2 -->
+                <div class="swiper-slide">
+                    <div class="slide-content">
+                        <img src="images/slider/티니핑_배너사진2.PNG" alt="할인 이벤트">
+                        <div class="slide-caption">
+                            <h5>여름 특별 할인</h5>
+                            <p>최대 50% 할인된 가격으로 만나보세요</p>
+                            <a href="#" class="btn btn-primary">할인상품 보기</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 슬라이드 3 -->
+                <div class="swiper-slide">
+                    <div class="slide-content">
+                        <img src="images/slider/티니핑_배너사진3.PNG" alt="신규회원 혜택">
+                        <div class="slide-caption">
+                            <h5>신규회원 특별 혜택</h5>
+                            <p>가입 즉시 사용 가능한 1만원 쿠폰 증정</p>
+                            <a href="#" class="btn btn-primary">회원가입하기</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 네비게이션 버튼 -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <!-- 페이지네이션 -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</section>
+
+        <!-- 선물 고민 해결 섹션 -->
+        <section class="gift-suggestion-section py-5">
+            <div class="container">
+                <h2 class="text-center mb-4">선물 고민 해결</h2>
+                <div class="row">
+                    <!-- 왼쪽 리스트 영역 -->
+                    <div class="col-md-6">
+                        <div class="section-list-wrapper">
+                            <ul class="section-list" id="sectionList"></ul>
+                            <div class="pagination-controls">
+                                <button id="prevPage" class="btn btn-secondary">이전</button>
+                                <span id="pageIndicator">1/2</span>
+                                <button id="nextPage" class="btn btn-secondary">다음</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 오른쪽 이미지 영역 -->
+                    <div class="col-md-6">
+                        <div class="section-image-wrapper">
+                            <img src="images/gift-suggestion.jpg" alt="선물 추천" class="section-image">
+                            <div class="image-overlay">
+                                <h3>특별한 선물을 찾으시나요?</h3>
+                                <p>티니핑이 도와드릴게요!</p>
+                                <button class="btn btn-primary">더 많은 선물 보기</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </section>
+        
+        <section class="brand-pick-section">
+            <div class="container">
+                <h2 class="text-center mb-4">브랜드 PICK</h2>
+                <div class="row">
+                    <!-- 왼쪽 사이드바 -->
+                    <div class="col-lg-3 col-md-4">
+                        <div class="brand-sidebar">
+                            <h3 class="sidebar-title">브랜드 카테고리</h3>
+                            <ul class="brand-categories">
+                                <li class="active"><a href="#all">전체보기</a></li>
+                                <li><a href="#new">신규 브랜드</a></li>
+                                <li><a href="#popular">인기 브랜드</a></li>
+                                <li><a href="#exclusive">단독 브랜드</a></li>
+                                <li><a href="#local">국내 브랜드</a></li>
+                                <li><a href="#global">해외 브랜드</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- 메인 콘텐츠 영역 -->
+                    <div class="col-lg-9 col-md-8">
+                        <div class="row g-4">
+                            <!-- 상품 카드 1 -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="images/products/brand1.jpg" alt="브랜드 상품 1">
+                                    </div>
+                                    <div class="product-info">
+                                        <h4 class="product-name">프리미엄 티니핑 인형</h4>
+                                        <p class="product-price">35,000원</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 상품 카드 2 -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="images/products/brand2.jpg" alt="브랜드 상품 2">
+                                    </div>
+                                    <div class="product-info">
+                                        <h4 class="product-name">티니핑 미니 백팩</h4>
+                                        <p class="product-price">45,000원</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 상품 카드 3 -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="images/products/brand3.jpg" alt="브랜드 상품 3">
+                                    </div>
+                                    <div class="product-info">
+                                        <h4 class="product-name">티니핑 키링 세트</h4>
+                                        <p class="product-price">15,000원</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="bestsellers-section py-5">
+            <div class="container">
+                <h2 class="section-title text-center mb-4">
+                    <span class="highlight">BEST</span> SELLERS
+                </h2>
+                
+                <!-- 카테고리 필터 -->
+                <div class="category-filter-wrapper mb-4">
+                    <div class="category-filter">
+                        <button class="filter-btn active" data-category="all">전체</button>
+                        <button class="filter-btn" data-category="baby">신생아</button>
+                        <button class="filter-btn" data-category="education">교육완구</button>
+                        <button class="filter-btn" data-category="character">캐릭터</button>
+                    </div>
+                </div>
+
+                <!-- 상품 그리드 -->
+                <div class="row g-4">
+                    <!-- 상품 카드 1 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="bestseller-card">
+                            <div class="best-badge">BEST 1</div>
+                            <div class="card-image">
+                                <img src="images/products/best1.jpg" alt="베스트상품1">
+                            </div>
+                            <div class="card-content">
+                                <div class="brand">레고</div>
+                                <h3 class="product-title">시티 경찰서</h3>
+                                <div class="rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span class="review-count">(128)</span>
+                                </div>
+                                <div class="price-info">
+                                    <span class="discount">20%</span>
+                                    <span class="price">89,900원</span>
+                                    <span class="original-price">112,000원</span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 상품 카드 2 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="bestseller-card">
+                            <div class="best-badge">BEST 2</div>
+                            <div class="card-image">
+                                <img src="images/products/best2.jpg" alt="베스트상품2">
+                            </div>
+                            <div class="card-content">
+                                <div class="brand">실바니안</div>
+                                <h3 class="product-title">패밀리 하우스</h3>
+                                <div class="rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <span class="review-count">(96)</span>
+                                </div>
+                                <div class="price-info">
+                                    <span class="discount">15%</span>
+                                    <span class="price">65,000원</span>
+                                    <span class="original-price">76,500원</span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 상품 카드 3 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="bestseller-card">
+                            <div class="best-badge">BEST 3</div>
+                            <div class="card-image">
+                                <img src="images/products/best3.jpg" alt="베스트상품3">
+                            </div>
+                            <div class="card-content">
+                                <div class="brand">플레이모빌</div>
+                                <h3 class="product-title">우주선</h3>
+                                <div class="rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span class="review-count">(156)</span>
+                                </div>
+                                <div class="price-info">
+                                    <span class="discount">25%</span>
+                                    <span class="price">79,900원</span>
+                                    <span class="original-price">106,500원</span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 상품 카드 4 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="bestseller-card">
+                            <div class="best-badge">BEST 4</div>
+                            <div class="card-image">
+                                <img src="images/products/best4.jpg" alt="베스트상품4">
+                            </div>
+                            <div class="card-content">
+                                <div class="brand">반다이</div>
+                                <h3 class="product-title">건담 모델키트</h3>
+                                <div class="rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <span class="review-count">(82)</span>
+                                </div>
+                                <div class="price-info">
+                                    <span class="discount">10%</span>
+                                    <span class="price">45,000원</span>
+                                    <span class="original-price">50,000원</span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!-- 베스트 리뷰 섹션 -->
+<section class="best-reviews-section py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">베스트 리뷰</h2>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="review-card">
+                    <div class="review-header">
+                        <img src="images/reviews/user1.jpg" alt="사용자1" class="reviewer-image">
+                        <div class="reviewer-info">
+                            <h5>행복한엄마</h5>
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p>아이가 정말 좋아해요! 조립하면서 창의력도 키우고 집중력도 향상되는 것 같아요.</p>
+                        <div class="review-images">
+                            <img src="images/reviews/review1-1.jpg" alt="리뷰이미지1">
+                            <img src="images/reviews/review1-2.jpg" alt="리뷰이미지2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="review-card">
+                    <div class="review-header">
+                        <img src="images/reviews/user2.jpg" alt="사용자2" class="reviewer-image">
+                        <div class="reviewer-info">
+                            <h5>장난감매니아</h5>
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p>퀄리티가 정말 좋아요. 가격대비 만족도가 매우 높습니다!</p>
+                        <div class="review-images">
+                            <img src="images/reviews/review2-1.jpg" alt="리뷰이미지3">
+                            <img src="images/reviews/review2-2.jpg" alt="리뷰이미지4">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Footer -->
+        <footer class="bg-dark text-light py-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h5>고객센터</h5>
+                        <p>1234-5678</p>
+                        <p>평일 09:00 - 18:00</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h5>회사 정보</h5>
+                        <p>주소: 서울시 강남구 테헤란로</p>
+                        <p>이메일: info@tinyfing.com</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h5>팔로우</h5>
+                        <div class="social-links">
+                            <!-- Social media links here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

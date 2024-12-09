@@ -1,0 +1,115 @@
+/* 알림 컨테이너 */
+.notification-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* 알림 스타일 */
+.notification {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 300px;
+    max-width: 450px;
+    padding: 12px 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateX(120%);
+    transition: transform 0.3s ease;
+}
+
+.notification.show {
+    transform: translateX(0);
+}
+
+.notification.hide {
+    transform: translateX(120%);
+}
+
+/* 알림 내용 */
+.notification-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.notification-message {
+    font-size: 14px;
+    color: #333;
+}
+
+/* 알림 타입별 스타일 */
+.notification-success {
+    border-left: 4px solid #4caf50;
+}
+
+.notification-success svg {
+    color: #4caf50;
+}
+
+.notification-error {
+    border-left: 4px solid #f44336;
+}
+
+.notification-error svg {
+    color: #f44336;
+}
+
+.notification-info {
+    border-left: 4px solid var(--primary-color);
+}
+
+.notification-info svg {
+    color: var(--primary-color);
+}
+
+.notification-warning {
+    border-left: 4px solid #ff9800;
+}
+
+.notification-warning svg {
+    color: #ff9800;
+}
+
+/* 닫기 버튼 */
+.notification-close {
+    background: none;
+    border: none;
+    color: #666;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 12px;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+}
+
+.notification-close:hover {
+    opacity: 1;
+}
+
+/* 아이콘 스타일 */
+.notification svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+    .notification-container {
+        left: 20px;
+        right: 20px;
+    }
+
+    .notification {
+        min-width: auto;
+        width: 100%;
+    }
+}

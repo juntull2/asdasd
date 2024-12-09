@@ -1,0 +1,214 @@
+/* 회원가입 페이지 스타일 */
+.register-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.register-box {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.register-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.register-header h1 {
+    color: var(--primary-color);
+    font-size: 28px;
+    margin: 0;
+}
+
+.register-header p {
+    color: #666;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+
+.input-with-button {
+    display: flex;
+    gap: 10px;
+}
+
+.input-with-button input {
+    flex: 1;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #FFE4E1;
+    border-radius: 25px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.input-hint {
+    font-size: 12px;
+    color: #888;
+    margin-top: -4px;
+}
+
+.check-button {
+    padding: 0 20px;
+    background-color: white;
+    border: 2px solid var(--primary-color);
+    border-radius: 25px;
+    color: var(--primary-color);
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+    white-space: nowrap;
+}
+
+.check-button:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.email-input-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.email-input-group input[type="text"],
+.email-input-group select {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.email-input-group span {
+    color: #666;
+}
+
+.phone-input-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.phone-input-group input {
+    width: 80px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.phone-input-group span {
+    color: #666;
+}
+
+.agreement-group {
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+    margin-top: 10px;
+}
+
+.agreement-all {
+    margin-bottom: 15px;
+}
+
+.agreement-all label {
+    font-weight: 500;
+}
+
+.agreement-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.agreement-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.agreement-group input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--primary-color);
+    border-radius: 4px;
+}
+
+.register-button {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.register-button:hover {
+    background-color: var(--accent-color);
+}
+
+.login-link {
+    text-align: center;
+    color: #666;
+    text-decoration: none;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+.login-link:hover {
+    color: var(--primary-color);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 480px) {
+    .register-box {
+        padding: 30px 20px;
+    }
+
+    .input-with-button {
+        flex-direction: column;
+    }
+
+    .check-button {
+        width: 100%;
+        padding: 12px;
+    }
+}
